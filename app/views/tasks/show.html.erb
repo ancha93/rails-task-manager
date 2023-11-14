@@ -1,0 +1,7 @@
+<h1>Task details</h1>
+
+<p><strong>Titre :</strong> <%= @task.title %></p>
+<p><strong>Détails :</strong> <%= @task.details %></p>
+<p><strong>Statut :</strong> <%= @task.completed ? 'finish' : 'in progress' %></p>
+
+<%= link_to 'Back to list', tasks_path %>

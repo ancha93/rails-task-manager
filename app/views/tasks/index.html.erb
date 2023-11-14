@@ -1,0 +1,23 @@
+<h1>My tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task.title %>
+      <%= task.details %>
+            <%= link_to task.title, task_path(task) %>
+            <%= link_to 'Nouvelle tâche', new_task_path %>
+
+
+      <% if task.completed %>
+        <span style="color: green;">Terminé</span>
+      <% else %>
+        <span style="color: red;">En cours</span>
+      <% end %>
+      <%= link_to 'Éditer', edit_task_path(task) %> |
+      <%= link_to 'Supprimer', destroy_task_path(task), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cette tâche ?' } %>
+    </li>
+
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Nouvelle tâche', new_task_path %>
